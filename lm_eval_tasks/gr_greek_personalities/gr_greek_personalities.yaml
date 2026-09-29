@@ -1,0 +1,25 @@
+task: gr_greek_personalities
+task_alias: gr_personalities
+
+dataset_path: json
+dataset_kwargs:
+  data_files: lm_eval_tasks/gr_greek_personalities/gr_greek_personalities.jsonl
+
+training_split: train
+validation_split: train
+
+output_type: multiple_choice
+doc_to_text: "Ερώτηση: {{ question }}\n\nΑ. {{ choices[0] }}\nΒ. {{ choices[1] }}\nΓ. {{ choices[2] }}\nΔ. {{ choices[3] }}\n\nΑπάντηση:"
+doc_to_choice: ["Α", "Β", "Γ", "Δ"]
+doc_to_target: "{{correct_index}}"
+
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
+  - metric: acc_norm
+    aggregation: mean
+    higher_is_better: true
+
+metadata:
+  version: 1.0

@@ -1,0 +1,19 @@
+# Ignore large compressed XML dumps
+*.xml.bz2
+
+# Ignore all model training checkpoints
+checkpoints/
+**/checkpoints/
+
+# Ignore large JSON/JSONL datasets while keeping smaller configs if needed
+dataset/*.json
+dataset/*.jsonl
+
+# Specific massive files from previous push error
+dataset/llm_questions_final.json
+dataset/ACCEPTED_EXAMPLES_QA_FINAL_DATASET_PHAROS.json
+dataset/CLEANED_QA_FINAL_DATASET_PHAROS.json
+dataset/NEWclean_QA_FINAL_DATASET_PHAROS.json
+dataset/GR_WIKIPEDIA_BIOS_QA_FINAL_DATASET_PHAROS.json
+dataset/QA_FINAL_DATASET_PHAROS.json
+dataset/clean_QA_FINAL_DATASET_PHAROS.json
